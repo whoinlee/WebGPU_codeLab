@@ -18,11 +18,11 @@
       if (!adapter) {
         throw new Error("No appropriate GPUAdapter found.");
       }
-      const device = await adapter.requestDevice();
+      const device = await adapter.requestDevice(); //***//
 
       //-- canvas configuration ---//
       const context = canvas.getContext("webgpu");
-      const canvasFormat = navigator.gpu.getPreferredCanvasFormat();
+      const canvasFormat = navigator.gpu.getPreferredCanvasFormat(); //***//
       context.configure({
         device: device,
         format: canvasFormat,
@@ -42,6 +42,7 @@
       });
       pass.end();
 
+      //-- ********** --//
       device.queue.submit([encoder.finish()]);
     </script>
   </body>
