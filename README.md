@@ -1,1 +1,1 @@
-# WebGPU_codeLab
+# Game of Life
